@@ -1,0 +1,15 @@
+html, body{
+    height: 100%;
+}
+
+.bg-p8 {
+    background-color: #c01616 !important;
+}
+
+.text-p8 {
+    color: #c01616 !important;
+}
+
+.bg-dark-p8 {
+    background-color: #333333 !important;
+}

@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'bootstrap5_3_3/css/bootstrap.min.css' %}" rel="stylesheet" />
+    <script src="{% static 'bootstrap5_3_3/js/bootstrap.bundle.min.js' %}"></script>
+    <link rel="icon" type="image/svg" href="{% static 'icons/icon_stn.svg' %}">
+    <link rel="stylesheet" href="{% static 'authentification/fonts/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'authentification/css/Login-screen.css' %}">
+    <title>Interface</title>
+
+</head>
+
+<body style="background-color: #e5e5e5;">
+    <div class="container">
+        <form class="login-one-form" method="post">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col">
+                    <div class="container d-flex flex-column justify-content-xxl-center align-items-xxl-center">
+                        <section style="padding: 30px;text-align: center;height: 135px;"><i class="fa fa-unlock-alt" id="lockico-1" style="font-size: 50px;"></i></section>
+                        <div class="form-group mb-3">
+                            {% if message != '' %}
+                            <div class="alert alert-danger">
+                                <strong>{{ message }}</strong>
+                            </div>
+                            {% endif %}
+                            <div>
+                                <h3 id="heading">Se connecter :</h3>
+                            </div>
+                            <div class="d-flex flex-column justify-content-evenly align-items-xxl-center" style="height: 100px;width: 266px;">
+                                <input name="username" class="form-control" type="text" id="input-1" placeholder="Username">
+                                <input name="password" class="form-control" type="password" id="input-2" placeholder="Password">
+                            </div>
+                        </div><button class="btn btn-primary" id="button" style="background-color:#007ac9;" type="submit">Se connecter</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

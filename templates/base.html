@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'bootstrap5_3_3/css/bootstrap.min.css' %}" rel="stylesheet" />
+    <link href="{% static 'style.css' %}" rel="stylesheet" />
+    <script src="{% static 'bootstrap5_3_3/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'bootstrap5_3_3/popper.min.js' %}"></script>
+    <link rel="icon" type="image/svg" href="{% static 'icons/icon_stn.svg' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Angkor&amp;display=swap">
+    <title>Interface</title>
+
+</head>
+<nav class="navbar navbar-expand-md py-3" style="background: #c01616;">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+            <span class="bs-icon-sm bs-icon-primary d-flex justify-content-center align-items-center me-2 bs-icon" style="background: transparent;">
+                <img src="{% static 'icons/icon_p8.png' %}">
+            </span>
+        </a>
+        <button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-2"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navcol-2">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link active" href="#" style="color: #ffffff;font-family: Angkor, serif;font-size: 18px;">Dashboard</a></li>
+                <li class="nav-item"><a class="nav-link" href="#" style="color: #ffffff;font-family: Angkor, serif;font-size: 18px;">Second Item</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}" style="font-family: Angkor, serif;color: #ffffff;font-size: 18px;">Se deconnecter</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container-fluid py-3">
+    {% block content %}{% endblock %}
+</div>
+<footer class="text-center py-4 fixed-bottom" style="background: #333333;">
+    <div class="container">
+        <div class="row row-cols-1 row-cols-lg-3">
+            <div class="col">
+                <p class="text-muted my-2" style="color: rgba(255,255,255,0.75) !important;font-family: Angkor, serif;font-size: 18px;">Copyright&nbsp;© 2024 STN</p>
+            </div>
+            <div class="col"></div>
+            <div class="col">
+                <ul class="list-inline my-2">
+                    <li class="list-inline-item"><a class="link-secondary" href="#" style="color: rgb(255,255,255) !important;font-family: Angkor, serif;">Privacy Policy</a></li>
+                    <li class="list-inline-item"><a class="link-secondary" href="#" style="color: rgb(255,255,255) !important;font-size: 18px;font-family: Angkor, serif;">Terms of Use</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+<body>
+    
+</body>
+
+</html>
