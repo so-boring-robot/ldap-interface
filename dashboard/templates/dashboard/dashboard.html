@@ -2,5 +2,46 @@
 {% load static %}
 
 {% block content %}
-<h1>On arrive au bout</h1>
+<div class="container">
+    <div class="row py-2">
+        <div class="col-4 border border-1">
+            <h2>Liste des groupes :</h2>
+            <dl>
+                {% for group in groups %}
+                    {% if group.id == active %}
+                        <a href="{% url 'dashboard' group.id %}" class="p-2 text-decoration-none text-dark"><dt><b>{{ group.name|upper }}</b></dt></a>
+                    {% else %}
+                        <a href="{% url 'dashboard' group.id %}" class="p-2 text-decoration-none text-dark"><dt>{{ group.name|upper }}</dt></a>
+                    {% endif %}
+                {% endfor %}    
+            </dl> 
+        </div>
+        <div class="col-8 border border-1">
+            <h2>Membres :</h2>
+            {% if members %}
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Nom</th>
+                        <th scope="col">Prénom</th>
+                        <th scope="col">Username</th>
+                      </tr>
+                </thead>
+                <tbody>
+                    {% for member in members %}
+                        <tr>
+                            <td>{{member.name}}</td>
+                            <td>{{member.surname}}</td>
+                            <td>{{member.username}}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            {% else %}
+            <h3>Pour le moment, ce groupe n'a aucun membre.</h3>
+            {% endif %}
+        </div>
+            
+    </div>
+</div>
 {% endblock %}

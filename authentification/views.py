@@ -11,7 +11,7 @@ def home(request):
       user = authenticate(request, username=username, password=password)
       if user is not None:
          login(request, user)
-         return redirect("dashboard")
+         return redirect("dashboard", group_active=500)
       else:
          message="Le nom d'utilisateur ou le mot de passe est incorrect."
    return render(request,'authentification/home.html', context={'message':message})
