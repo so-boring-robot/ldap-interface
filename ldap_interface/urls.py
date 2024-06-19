@@ -24,4 +24,5 @@ urlpatterns = [
     path('', authentification.views.home, name="login"),
     path('logout/', authentification.views.logout_user, name='logout'),
     path('dashboard/<int:group_active>/', dashboard.views.dashboard, name="dashboard"),
+    path('add_posix_group/', dashboard.views.add_posix_group, name='add_posix_group')
 ]

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <div class="row py-2">
+        <h2>Ajouter un groupe :</h2>
+        <form method='post' novalidate>
+        {% csrf_token %}
+        {% for f in form %}
+            <label><b>{{ f.label }}</b></label>
+            {{ f.as_widget }}<br>                   
+        {% endfor %}
+        <button type='submit' class='btn bg-danger' >✔ Enregistrer</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
