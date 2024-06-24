@@ -7,7 +7,7 @@
         <div class="col-4 border border-1">
             <h2>Liste des groupes :</h2>
             <dl>
-                <a href="{% url 'add_posix_group' %}"><dt><b><i class="bi bi-plus-square"> Ajouter une groupe</i></b></dt></a>
+                <a href="{% url 'add_posix_group' %}"><dt><b><i class="bi bi-plus-square"> Ajouter un groupe</i></b></dt></a>
                 {% for group in groups %}
                     {% if group.id == active %}
                         <a href="{% url 'dashboard' group.id %}" class="p-2 text-decoration-none text-dark"><dt><b>{{ group.name|upper }}</b></dt></a>
@@ -19,6 +19,7 @@
         </div>
         <div class="col-8 border border-1">
             <h2>Membres :</h2>
+            <a href="{% url 'add_member' active %}"><dt><b><i class="bi bi-plus-square"> Ajouter un membre</i></b></dt></a>
             {% if members %}
             <table class="table table-striped">
                 <thead>
@@ -31,9 +32,9 @@
                 <tbody>
                     {% for member in members %}
                         <tr>
-                            <td>{{member.name}}</td>
-                            <td>{{member.surname}}</td>
-                            <td>{{member.username}}</td>
+                            <td>{{member.givenName}}</td>
+                            <td>{{member.sn}}</td>
+                            <td>{{member.uid}}</td>
                         </tr>
                     {% endfor %}
                 </tbody>
