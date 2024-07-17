@@ -4,7 +4,7 @@
 {% block content %}
 <div class="container">
     <div class="row py-2">
-        <h2>Ajouter un membre :</h2>
+        <h2>Ajouter des utilisateurs :</h2>
         <form method='post' enctype="multipart/form-data" novalidate>
         {% csrf_token %}
         {% for field in form.visible_fields %}

@@ -7,14 +7,6 @@
         <h2>Ajouter un utilisateur :</h2>
         <form method='post' novalidate>
         {% csrf_token %}
-        {% for field in form.hidden_fields %}
-            {% for error in field.errors %}
-            <div class="alert alert-danger w-25">
-                <strong>{{ error|escape }}</strong>
-            </div>
-            {% endfor %}
-            {{ field.as_widget }}
-        {% endfor %}
         {% for field in form.visible_fields %}
             <label><b>{{ field.label }}</b></label>
             {% for error in field.errors %}

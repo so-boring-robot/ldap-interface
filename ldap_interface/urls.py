@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path
 import authentification.views
 import dashboard.views
+import schema.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -28,5 +29,7 @@ urlpatterns = [
     path('add_user/<int:group_active>', dashboard.views.add_user_page, name='add_user'),
     path('add_bulk_users/<int:group_active>', dashboard.views.add_bulk_users, name='add_bulk_users'),
     path('delete_user/<int:group_active>/<slug:uid>/', dashboard.views.delete_user, name='delete_user'),
-    path('edit_user/<slug:uid>/', dashboard.views.edit_user_page, name='edit_user')
+    path('edit_user/<slug:uid>/', dashboard.views.edit_user_page, name='edit_user'),
+    path('schema/dashboard/', schema.views.dashboard, name='schema_dashboard'),
+    path('schema/add_schema/', schema.views.add_schema, name='add_schema'),
 ]

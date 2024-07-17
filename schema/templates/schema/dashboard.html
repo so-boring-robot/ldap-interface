@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <div class="row py-2">
+        <div class="border border-1">
+            <h2>Schémas :</h2>
+            <hr class="w-25">
+            <a href="{% url 'add_schema' %}"><dt><b><i class="bi bi-plus-square"> Ajouter un schéma</i></b></dt></a>
+            {% if schemas %}
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Nom</th>
+                        <th scope="col">Action</th>
+                      </tr>
+                </thead>
+                <tbody>
+                    {% for schema in schemas %}
+                        <tr>
+                            <td>{{schema.nom}}</td>
+                            <td><a href="#"><i class="bi bi-pencil-fill"></i></a>&nbsp;<a href="#"><i class="bi bi-trash3-fill text-danger"></i></a></td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            {% else %}
+            <h3>Pour le moment, aucun schéma n'a été enregistré.</h3>
+            {% endif %}
+        </div>
+            
+    </div>
+</div>
+{% endblock %}
