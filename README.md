@@ -27,12 +27,16 @@ AUTH_LDAP_BASE_DN = 'dc=example,dc=com'
 AUTH_LDAP_BIND_DN = "cn=admin,dc=example,dc=com"
 AUTH_LDAP_BIND_PASSWORD = "aroot"
 ```
-3.  Create an admin account
+3.  Migrate elements from database
+``` bash
+python3 manage.py migrate
+```
+4.  Create an admin account
 ``` bash
 python3 manage.py createsuperuser
 ```
-4.  Check if everything's alright by running the test server
+5.  Check if everything's alright by running the test server
 ``` bash
 python3 manage.py runserver
 ```
-4. Then go to [127.0.0.1:8000/](127.0.1:8000/) and enjoy !
+6. Then go to [127.0.0.1:8000/](127.0.1:8000/) and enjoy !
