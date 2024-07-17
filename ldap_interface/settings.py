@@ -128,7 +128,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Secret from decouple
 SECRET_KEY = config('SECRET_KEY')
 
-
 AUTH_LDAP_SERVER_URI = config('AUTH_LDAP_SERVER_URI')
 AUTH_LDAP_BASE_DN = config('AUTH_LDAP_BASE_DN')
 AUTH_LDAP_BIND_DN = config('AUTH_LDAP_BIND_DN')

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <div class="row py-2">
+        <h2>Ajouter un membre :</h2>
+        <form method='post' novalidate>
+        {% csrf_token %}
+        {% for field in form.visible_fields %}
+            <label><b>{{ field.label }}</b></label>
+            {% for error in field.errors %}
+            <div class="alert alert-danger w-25">
+                <strong>{{ error|escape }}</strong>
+            </div>
+            {% endfor %}
+            {{ field.as_widget }}<br>                   
+        {% endfor %}
+        <button type='submit' class='btn bg-danger' >✔ Enregistrer</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

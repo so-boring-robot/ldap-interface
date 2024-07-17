@@ -19,7 +19,8 @@
         </div>
         <div class="col-8 border border-1">
             <h2>Membres :</h2>
-            <a href="{% url 'add_member' active %}"><dt><b><i class="bi bi-plus-square"> Ajouter un membre</i></b></dt></a>
+            <a href="{% url 'add_user' active %}"><dt><b><i class="bi bi-plus-square"> Ajouter un membre</i></b></dt></a>
+            <a href="{% url 'add_bulk_users' active %}"><dt><b><i class="bi bi-plus-square"> Ajouter plusieurs membres</i></b></dt></a>
             {% if members %}
             <table class="table table-striped">
                 <thead>
@@ -27,6 +28,7 @@
                         <th scope="col">Nom</th>
                         <th scope="col">Prénom</th>
                         <th scope="col">Username</th>
+                        <th scope="col">Action</th>
                       </tr>
                 </thead>
                 <tbody>
@@ -35,6 +37,7 @@
                             <td>{{member.givenName}}</td>
                             <td>{{member.sn}}</td>
                             <td>{{member.uid}}</td>
+                            <td><a href="{% url 'edit_user' member.uid %}"><i class="bi bi-pencil-fill"></i></a>&nbsp;<a href="{% url 'delete_user' active member.uid %}"><i class="bi bi-trash3-fill text-danger"></i></a></td>
                         </tr>
                     {% endfor %}
                 </tbody>
