@@ -5,7 +5,6 @@ SECRET_KEY = 'django-insecure-qsg74f%9uf#(az2sp&v5b-=4em)06%9n4pzal9%8^5c#ia3&04
 AUTH_LDAP_BASE_DN = 'dc=example,dc=com'
 AUTH_LDAP_BIND_DN = "cn=admin,dc=example,dc=com"
 AUTH_LDAP_BIND_PASSWORD = "aroot"
-#AUTH_LDAP_USER_SEARCH = LDAPSearch("ou=users,dc=example,dc=com", ldap.SCOPE_SUBTREE, "(uid=%(user)s)")
 
 def get_groups(connection):
    # Construire le DN de base pour la recherche des utilisateurs
